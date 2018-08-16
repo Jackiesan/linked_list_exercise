@@ -1,7 +1,7 @@
 require './node.rb'
 
 class LinkedList
-  attr_accessor :head
+  attr_reader :head
   # keep the head private. Not accessible outside class.
   def initialize
     @head = nil
@@ -98,6 +98,46 @@ class LinkedList
     return current.data
   end
 
+  def insert_ascending(value)
+
+    self.insert(value) if @head.nil?
+
+    new_node = Node.new(value)
+    i = @head
+
+    if self.length == 1 && value <= i.data
+      new_node.next = i
+      @head = new_node
+      return
+    elsif self.length == 1 && value > i.data
+      @head.next = new_node
+      return
+    elsif value <= i.data
+      self.insert(value)
+    end
+
+    k = i.next
+
+    while k != nil
+      if i.data == value
+        i.next = new_node
+        new_node.next = k
+        return
+      elsif value > i.data && value < k.data
+        i.next = new_node
+        new_node.next = k
+        return
+      else
+        i = i.next
+        k = k.next
+      end
+    end
+
+    i.next = new_node
+    return
+
+  end
+
   private
 
   def number?(obj)
@@ -105,26 +145,4 @@ class LinkedList
     /\A[+-]?\d+(\.[\d]+)?\z/.match(obj)
   end
 
-
-
 end
-
-
-list = LinkedList.new
-list.insert(4)
-list.insert(3)
-list.insert(2)
-list.insert(1)
-list.insert(0)
-
-#
-# list.insert(4)
-# list.insert(6)
-#
-# list.insert(7)
-
-# puts list.search('first node')
-puts list.find_nth_from_beginning(4)
-# list.insert('third node')
-# puts list.head.data
-# puts list.head.next.data
