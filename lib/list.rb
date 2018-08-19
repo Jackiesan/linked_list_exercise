@@ -1,11 +1,7 @@
 require './node.rb'
 
 class LinkedList
-<<<<<<< HEAD
-=======
-  attr_reader :head
-  # keep the head private. Not accessible outside class.
->>>>>>> 2977fe401a3cada4412731777fcc930e772d8b92
+
   def initialize
     @head = nil
   end
