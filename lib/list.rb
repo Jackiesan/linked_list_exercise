@@ -1,4 +1,4 @@
-require './node.rb'
+require_relative 'node'
 
 class LinkedList
 
