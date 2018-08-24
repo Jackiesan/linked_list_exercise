@@ -1,0 +1,26 @@
+{
+  "name": "linked_lists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.5.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackiesan/linked_list_exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jackiesan/linked_list_exercise/issues"
+  },
+  "homepage": "https://github.com/Jackiesan/linked_list_exercise#readme"
+}

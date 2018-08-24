@@ -85,7 +85,7 @@ class LinkedList
   end
 
   def find_nth_from_beginning(n)
-    return nil if !number?(n)
+    return nil if !number?(n) || n < 0
 
     current = @head
     return current.data if n == 0
